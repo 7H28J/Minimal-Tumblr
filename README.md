@@ -7,4 +7,7 @@ I've added a lot of small tweaks and changes to the theme to make it better on t
 
 More changes to come + detailed list of changes(?)
 
-![alttext](https://imgur.com/rgni9DU.png)
+![text](https://imgur.com/rgni9DU.png)
+
+# Solid colour boolean
+![text](https://i.imgur.com/aL7iSLN.gif)
