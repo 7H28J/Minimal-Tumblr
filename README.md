@@ -6,3 +6,5 @@ by Copenhagen themes // cphthms.tumblr.com
 I've added a lot of small tweaks and changes to the theme to make it better on the eyes.
 
 More changes to come + detailed list of changes(?)
+
+![alttext](https://imgur.com/rgni9DU.png)
