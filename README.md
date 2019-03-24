@@ -8,7 +8,7 @@ I've added a lot of small tweaks and changes to the theme to make it better on t
 More changes to come + detailed list of changes(?)
 
 ![text](https://imgur.com/rgni9DU.png)
-![text](https://i.imgur.com/urK4tav.png)
+![text](https://i.imgur.com/HeNJxz5.png)
 
 # Solid colour boolean
 ![text](https://i.imgur.com/aL7iSLN.gif)
