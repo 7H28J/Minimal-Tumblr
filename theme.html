@@ -13,10 +13,10 @@
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
  
  <!--boolea metas-->
- <meta name="if:TitlebarStyle" content="0"/>
- <meta name="if:MinDescription" content="0"/>
- <meta name="if:WeebModo" content="1"/>
- <meta name="if:DarkMode" content="0"/>
+ <meta name="if:Titlebar Style" content="0"/>
+ <meta name="if:Min Description" content="1"/>
+ <meta name="if:Weeb Modo" content="1"/>
+ <meta name="if:Min Links" content="1"/>
  
  
 <!--metas-->
@@ -273,20 +273,22 @@ ul#menu li:hover .th {
  * ---------------------------------------------------------pagination
  */
 .pagination {
-    font-size: 10px;
+	background-color: #FFFFFF;
+    color: #FFFFFF;
+	font-size: 10px;
     text-align: center;
     margin: 10px 0 0px 0;
     padding: 10px;
     display: block;
 }
 .pagination a {
-    color: {color:Accent};
+    color: {color:Text};
 }
 .pagination a:hover{
     color:{color:Accent hover};
 }
 .jump_page, .current_page {
-    color: {color:Accent};
+    color: {color:Text};
     margin: 0px;
     padding: 4px 8px;
 }
@@ -385,6 +387,7 @@ h1 a {
  
  
 header {
+
     display: block;
     margin: 20px -20px -10px -20px;
     padding: 10px 20px 10px 20px;
@@ -510,7 +513,6 @@ ul.meta li.sources {
     padding: 0px 0px 0px 20px;
 }
  
- 
 /*
  * ---------------------------------------------------------Footer
  */
@@ -526,8 +528,7 @@ footer {
 	
     margin: 10px -20px -20px -20px;
     padding: 10px;
-    font-weight:700;
-    text-transform:uppercase;
+    text-transform:normal;
     font-size:calc({select:font size} - 1px);
     -moz-transition-duration: .7s;
     -webkit-transition-duration: .7s;
@@ -976,12 +977,19 @@ discord: min#0001
 </div>
  
 <ul id="menu">
+{block:IfMinLinks}
 <li><a href="{BlogURL}"><span class="th th-house-1-o"></span> index</a></li>
 <li><a href="https://twitter.com/7H28J"><span class="th th-send-1-o"></span> twitter</a></li>
+<li><a href="https://last.fm/user/min_n"><span class="th th-send-1-o"></span> last.fm</a></li>
+<li><a href="https://www.youtube.com/channel/UC2IvLig3rbrfayp2pdSq4vA"><span class="th th-send-1-o"></span> youtube</a></li>
+{/block:IfMinLinks}
+
+{block:IfNotMinLinks}
 {block:iflink1title}<li><a href="{text:link 1 url}"><span class="th th-{text:link 1 icon}"></span> {text:link 1 title}</a></li>{/block:iflink1title}
 {block:iflink2title}<li><a href="{text:link 2 url}"><span class="th th-{text:link 2 icon}"></span> {text:link 2 title}</a></li>{/block:iflink2title}
 {block:iflink3title}<li><a href="{text:link 3 url}"><span class="th th-{text:link 3 icon}"></span> {text:link 3 title}</a></li>{/block:iflink3title}
 {block:iflink4title}<li><a href="{text:link 4 url}"><span class="th th-{text:link 4 icon}"></span> {text:link 4 title}</a></li>{/block:iflink4title}
+{/block:IfNotMinLinks}
 </ul>
  
 </div>
@@ -998,7 +1006,7 @@ discord: min#0001
 <a href="{PreviousPage}" class="jump_page">Previous</a>
 {/block:IfNotWeebModo}
 {/block:PreviousPage}
- 
+
 {block:NextPage}
 {block:IfWeebModo}
 <a href="{NextPage}" class="jump_page">次のページ</a>
