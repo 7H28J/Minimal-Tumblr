@@ -671,21 +671,23 @@ li.long {
  */
  
  .entries iframe {
-    width:calc({select:Post width} + 0px);
-   cursor: pointer;
+   width:calc({select:Post width} + 0px);
+   cursor: default !important;
+   padding-bottom: 10px;
+   padding-top: 10px;
 }
  
 .tumblr_video_container {
-     max-height:540px!important;
-     overflow:hidden!important;
-   cursor: pointer;
+    max-height:540px!important;
+    overflow:hidden!important;
+	cursor: default;
 }
  
 video {
    max-width:100%;
    height:auto!important;
    margin-top:10px;
-   cursor: pointer;
+   cursor: default;
 }
 /*
  * ---------------------------------------------------------Audio
