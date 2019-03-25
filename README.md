@@ -27,4 +27,6 @@ More changes to come + detailed list of changes(?)
 + Default font size is now 11 (small mode is an option 8px).
 + Default width is 500 (small mode is an option, 400px).
 
++ Tidied up the code, made it easier to understand and change.
+
 More to come
