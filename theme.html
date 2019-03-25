@@ -11,15 +11,24 @@
 {/block:Description}
 <link rel="shortcut icon" href="https://imgur.com/OyJYdyo.png">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
- 
- <!--boolea metas-->
+
+
+
+ <!--        boolea metas        -->
+
+
+
  <meta name="if:Titlebar Style" content="0"/>
  <meta name="if:Min Description" content="1"/>
  <meta name="if:Weeb Modo" content="1"/>
  <meta name="if:Min Links" content="1"/>
- 
- 
-<!--metas-->
+
+
+
+<!--        Meta        -->
+
+
+
 <meta name="image:Sidebar image" content=""/>
 <meta name="if:Sidebar Image" content="0"/>
  
@@ -80,10 +89,15 @@
  <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
  
 <style type="text/css">
+
+
  
 /*
- * ---------------------------------------------------------Globals
- */
+    --      Globals     --
+*/
+
+
+
 html {
     cursor: default;
 }
@@ -99,9 +113,9 @@ html {
     }
    
 ::-webkit-scrollbar {
-        width: 4px;
-        background: #fff;
-        border: 0px solid #000;
+    width: 4px;
+    background: #fff;
+    border: 0px solid #000;
 }
  
 ::-webkit-scrollbar-thumb {
@@ -138,9 +152,11 @@ a:hover {
  
  
 /*
- * ---------------------------------------------------------Menu
- */  
- 
+        --      Menu        --
+*/  
+
+
+
 ul#menu {
     display: block;
     counter-reset: navno;
@@ -210,16 +226,15 @@ ul#menu li:hover .th {
     -webkit-transition-duration: 1s;
     transition-duration: 1s;
  }
- 
- 
- 
- 
+
+
+
 /*
- * ---------------------------------------------------------sidebar
- */
- 
- 
- 
+    --      Sidebar     --
+*/
+
+
+
 #side {
     position: fixed;
     float: left;
@@ -268,10 +283,15 @@ ul#menu li:hover .th {
     line-height: 17px;
     font-weight: 500;
 }
- 
+
+
+
 /*
- * ---------------------------------------------------------pagination
- */
+    --      Pagination      --
+*/
+
+
+
 .pagination {
 	background-color: #FFFFFF;
     color: #FFFFFF;
@@ -292,14 +312,17 @@ ul#menu li:hover .th {
     margin: 0px;
     padding: 4px 8px;
 }
- 
+
+
+
 /*
- * ---------------------------------------------------------content
- * article
- * entires
- */
- 
- 
+    --      Content     --
+    --      Article     --
+    --      Entries     --
+*/
+
+
+
 #wrap {
     margin-left: auto;
     margin-right: auto;
@@ -363,13 +386,15 @@ blockquote img {
     max-width: calc({select:Post width} + 0px);
     height:auto;
 }
- 
- 
- 
+
+
+
 /*
- * ---------------------------------------------------------h1
- */
- 
+    __      H1      --
+*/
+
+
+
 h1 {
     margin: 0px 0px 10px 0px;
     color:{color:Text};
@@ -380,12 +405,15 @@ h1 {
 h1 a {
     color:{color:Text};
 }
- 
+
+
+
 /*
- * ---------------------------------------------------------Header
- */
- 
- 
+    --      Header      --
+*/
+
+
+
 header {
 
     display: block;
@@ -512,11 +540,15 @@ ul.meta li.sources {
     margin: 0px 0px 0px 2px;
     padding: 0px 0px 0px 20px;
 }
- 
+
+
+
 /*
- * ---------------------------------------------------------Footer
- */
- 
+    --        Footer        --
+*/
+
+
+
 footer {
     {block:IfTitlebarStyle}
     background: {color:Solid};
@@ -553,11 +585,15 @@ ul.tags li {
     margin: 0 10px 0 0;
     padding: 0 0 0 0;
 }
- 
+
+
+
 /*
- *  --------------------------------------------------------Ask
- */
- 
+    --        Ask        --
+*/
+
+
+
 ul.ask {
     list-style: outside none none;
     margin: 0;
@@ -609,11 +645,15 @@ ul.ask {
     list-style: outside none none;
     padding: 0;
 }
- 
- 
+
+
+
 /*
- * ---------------------------------------------------------Chat
- */
+    --        Chat        --
+*/
+
+
+
 .even_user, .odd_user {
     padding: 0px;
     margin-bottom: 5px;
@@ -623,10 +663,15 @@ ul.chat {
     margin: 0;
     padding: 0px;
 }
- 
+
+
+
 /*
- * ---------------------------------------------------------Quote
- */
+    --        Quote        --
+*/
+
+
+
 li.short {
     border-left-width: 0;
     letter-spacing: 0.5px;
@@ -664,12 +709,15 @@ li.long {
     margin-right: 5px;
     color: {color:Gradient 3};
 }
- 
- 
+
+
+
 /*
- * ---------------------------------------------------------video
- */
- 
+    --        Video        --
+*/
+
+
+
  .entries iframe {
    width:calc({select:Post width} + 0px);
    cursor: default !important;
@@ -689,9 +737,15 @@ video {
    margin-top:10px;
    cursor: default;
 }
+
+
+
 /*
- * ---------------------------------------------------------Audio
- */
+    --        Audio        --
+*/
+
+
+
 .audio_player {
     overflow: hidden !important;
 }
@@ -739,13 +793,15 @@ ul.audio {
     margin-left: 45px;
     font-weight: 700;
 }
- 
- 
- 
+
+
+
 /*
- * Blockquote
- */
- 
+    --        Blockquote        --
+*/
+
+
+
 blockquote {
     border-left: 1px solid #f3f3f3;
     margin: 0;
@@ -770,10 +826,15 @@ blockquote {
     padding:1px;
     border-radius: {select:Edges};
 }
+
+
+
 /*
- * ---------------------------------------------------------Notes
- */
- 
+    --        Notes        --
+*/
+
+
+
 #notes {
     margin: 0 0 100px;
     padding: 0px;
@@ -808,9 +869,16 @@ ol.notes li.note img.avatar {
     border-radius: {select:Edges};
     padding: 1px;
 }
+
+
+
 /*
- * ---------------------------------------------------------Extra
- */
+    --        Extra        --
+*/
+
+
+
+
 sub {
     font-size: inherit!important;
     font-family: inherit!important;
@@ -1160,9 +1228,13 @@ discord: min#0001
  
  
 </div>
- 
- 
- <!--start of header/meta  -->
+
+
+
+ <!--        start of header/meta        -->
+
+
+
 {block:Date}
 <header>
  
@@ -1207,14 +1279,14 @@ discord: min#0001
 </ul>
 </header>  
 {/block:Date}    
-<!--end of header/meta  -->
- 
- 
- 
- 
- 
-<!--start of tags/footer  -->
- 
+<!--        end of header/meta        -->
+
+
+
+<!--        start of tags/footer        -->
+
+
+
 {block:HasTags}
 <footer>  
 <ul class="tags">
@@ -1222,12 +1294,13 @@ discord: min#0001
 </ul>
 </footer>
 {/block:HasTags}
- 
- 
- 
-<!--end of tags/footer  -->
- 
- 
+
+
+
+<!--        end of tags/footer        -->
+
+
+
 </article>
 {/block:posts}
  
