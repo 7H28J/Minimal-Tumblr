@@ -989,21 +989,23 @@ iframe.tmblr-iframe:hover {
 <script src="https://static.tumblr.com/wgg6svp/I8Yobwo15/unnest.min.js"></script>
  
 <script>  
-$(document).ready(function(){
-   $('.photo-slideshow').pxuPhotoset({
-       lightbox: true,
-       rounded: true,
-       gutter: '1px',
-       borderRadius: '0px',
-       photoset: '.photo-slideshow',
-       photoWrap: '.photo-data',
-       photo: '.pxu-photo'
-   });
+$(document).ready(function() {
+  $('.photo-slideshow').pxuPhotoset({
+    lightbox: true,
+    rounded: true,
+    gutter: '1px',
+    borderRadius: '0px',
+    photoset: '.photo-slideshow',
+    photoWrap: '.photo-data',
+    photo: '.pxu-photo'
+  });
 });
+
 </script>
  
 <script>
-$(function(){  $('.entries').unnest({
+$(function() {
+  $('.entries').unnest({
     yourCaption: ".txtt", //your caption selector, the div wrapping {Caption}
     wrapName: ".tumblr_parent", //the name of the captions’ new wrapper
     newCaptionUsername: true, //if the user adds a new caption, following a series of captions, show their username above the caption
@@ -1012,22 +1014,22 @@ $(function(){  $('.entries').unnest({
     tumblrAvatarClass: ".tumblr_avatar", //class of the avatar next to the username
     usernameColon: false //if turned to false, removes the colon at the end of usernames
   });
-  });
+});
 </script>
  
  
 <script src ="//static.tumblr.com/fwgzvyf/Oj1o08f6h/shythemes.vr.js"></script>
 <script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
 <script>
-(function($){
-$(document).ready(function(){
-$("a[title]").style_my_tooltips({
-tip_follows_cursor:true,
-tip_delay_time:30,
-tip_fade_speed:300,
-attribute:"title"
-});
-});
+(function($) {
+  $(document).ready(function() {
+    $("a[title]").style_my_tooltips({
+      tip_follows_cursor: true,
+      tip_delay_time: 30,
+      tip_fade_speed: 300,
+      attribute: "title"
+    });
+  });
 })(jQuery);
 </script>
 
