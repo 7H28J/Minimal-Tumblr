@@ -20,10 +20,11 @@ More changes to come + detailed list of changes(?)
 + Added a better Pagination, the default freya pagination is no good.
 + Added more Edge styles (Rounded 3px, 5px, 8px + Sharp Edges).
 + Added Weeaboo Mode boolean option, translates the theme to Japanese (might add Korean).
-+ Added boolean to Like + Reblog buttons, customizable colours.
++ Added Boolean to Like + Reblog buttons, customizable colours.
 *    Inactive > #2d2d2d
 *    Reblog Hover > #75b1d6
 *    Like Hover > ff6767
++ Added Boolean for disabling right clicking
 + Default font size is now 11 (small mode is an option 8px).
 + Default width is 500 (small mode is an option, 400px).
 
