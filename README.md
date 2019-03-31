@@ -27,6 +27,7 @@ More changes to come + detailed list of changes(?)
 + Added Boolean for disabling right clicking
 + Default font size is now 11 (small mode is an option 8px).
 + Default width is 500 (small mode is an option, 400px).
++ Lightbox works for Single Posts along with Photosets now.
 
 + Tidied up the code, made it easier to understand and change.
 
