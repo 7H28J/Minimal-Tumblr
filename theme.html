@@ -978,7 +978,7 @@ iframe.tmblr-iframe {
  
 iframe.tmblr-iframe:hover {
     opacity:0.6!important;}
- 
+
 </style>
  
  
@@ -992,7 +992,7 @@ iframe.tmblr-iframe:hover {
 $(document).ready(function() {
   $('.photo-slideshow').pxuPhotoset({
     lightbox: true,
-    rounded: true,
+    rounded: false, /* true */
     gutter: '1px',
     borderRadius: '0px',
     photoset: '.photo-slideshow',
@@ -1182,7 +1182,9 @@ discord: min#0001
 <center>
 {block:HighRes}
 {block:HighRes}
-<a href="{PhotoURL-HighRes}"><img {block:HighRes}style="display:none"{/block:HighRes} src="{PhotoURL-500}"/> {block:HighRes}<img src="{PhotoURL-HighRes}"/></a>  {/block:HighRes}
+<a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr-box'); return false">
+<img src="{PhotoURL-HighRes}">
+</a>
 </center>
 </div>
 </div>
