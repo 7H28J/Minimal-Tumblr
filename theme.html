@@ -325,7 +325,7 @@ ul#menu li:hover .th {
     color: #FFFFFF;
     font-size: 10px;
     margin: 10px 0 0px 0;
-    padding: 10px;
+    /*padding: 10px;*/
     display: block;
 }
 
@@ -1066,8 +1066,10 @@ document.oncontextmenu = new Function("return false");
  
  
 </head>
- 
-<body>
+
+<!-- used for Twitter CSS override -->
+
+<body onload="paint()">
  
  
  
@@ -1142,9 +1144,28 @@ discord: min#0001
 </div>
 {/block:Pagination}
 
+<!-- Twitter + CSS override Javascript -->
+
 {block:IfMinTwitter}
 <div class="twitter">
-<a class="twitter-timeline" data-height="350" data-link-color="#3f3f3f" href="https://twitter.com/7H28J?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a class="twitter-timeline" data-height="324" data-dnt="true" href="https://twitter.com/7H28J" data-widget-id="343053082919333888"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script type="text/javascript">
+    var widgetCSS = "" +
+    ".timeline-Header{display: none;}" +
+    ".timeline-Tweet-text{color: #9a9a9a;}" +
+    ".timeline-Footer{display: none;}";
+
+function paint(){
+  var w = document.getElementById("twitter-widget-0").contentDocument;
+  
+  var s = document.createElement("style");
+  s.innerHTML = widgetCSS;
+  s.type = "text/css";
+  w.head.appendChild(s);
+}
+</script>
 
 </div>
 
