@@ -5,14 +5,6 @@ by Copenhagen themes // cphthms.tumblr.com
 
 I've added a lot of small tweaks and changes to the theme to make it better on the eyes.
 
-More changes to come + detailed list of changes(?)
-
-![text](https://i.imgur.com/xIFvDZl.png)
-![text](https://i.imgur.com/vMBmFRN.png)
-
-# Solid colour boolean
-![text](https://i.imgur.com/aL7iSLN.gif)
-
 # Changes
 
 + Post Entries have a 20px gap between eachother
@@ -33,3 +25,11 @@ More changes to come + detailed list of changes(?)
 + Tidied up the code, made it easier to understand and change.
 
 More to come
+
+# Preview
+
+![text](https://i.imgur.com/xIFvDZl.png)
+![text](https://i.imgur.com/vMBmFRN.png)
+
+# Solid colour boolean
+![text](https://i.imgur.com/aL7iSLN.gif)
