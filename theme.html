@@ -25,24 +25,18 @@
 
 
 
- <!--        boolea metas        -->
-
-
-
- <meta name="if:Titlebar Style" content="0"/>
- <meta name="if:Min Description" content="1"/>
- <meta name="if:Weeb Modo" content="1"/>
- <meta name="if:Min Links" content="1"/>
- <meta name="if:Disable Right Click" content="1"/>
-
-
-
 <!--        Meta        -->
 
 
 
+<meta name="if:Titlebar Style" content="0"/>
 <meta name="image:Sidebar image" content=""/>
 <meta name="if:Sidebar Image" content="0"/>
+<meta name="if:Min Description" content="1"/>
+<meta name="if:Min Links" content="1"/>
+<meta name="if:Min Twitter" content="1">
+<meta name="if:Disable Right Click" content="1"/>
+<meta name="if:Japanese" content="0"/>
  
 <meta name="color:Text" content="#9a9a9a"/>
 <meta name="color:Gradient text" content="#ffffff"/>
@@ -319,10 +313,20 @@ ul#menu li:hover .th {
 .pagination a:hover{
     color:{color:Accent hover};
 }
+
 .jump_page, .current_page {
     color: {color:Text};
     margin: 0px;
     padding: 4px 8px;
+}
+
+.twitter {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 10px;
+    margin: 10px 0 0px 0;
+    padding: 10px;
+    display: block;
 }
 
 
@@ -1116,32 +1120,40 @@ discord: min#0001
 <div class="pagination">
  
 {block:PreviousPage}
-{block:IfWeebModo}
+{block:IfJapanese}
 <a href="{PreviousPage}" class="jump_page">前のページ</a>
-{/block:IfWeebModo}
+{/block:IfJapanese}
 
-{block:IfNotWeebModo}
+{block:IfNotJapanese}
 <a href="{PreviousPage}" class="jump_page">Previous</a>
-{/block:IfNotWeebModo}
+{/block:IfNotJapanese}
 {/block:PreviousPage}
 
 {block:NextPage}
-{block:IfWeebModo}
+{block:IfJapanese}
 <a href="{NextPage}" class="jump_page">次のページ</a>
-{/block:IfWeebModo}
+{/block:IfJapanese}
 
-{block:IfNotWeebModo}
+{block:IfNotJapanese}
 <a href="{NextPage}" class="jump_page">Next</a>
-{/block:IfNotWeebModo}
+{/block:IfNotJapanese}
 {/block:NextPage}
  
 </div>
 {/block:Pagination}
- 
- 
+
+{block:IfMinTwitter}
+<div class="twitter">
+<a class="twitter-timeline" data-height="350" data-link-color="#3f3f3f" href="https://twitter.com/7H28J?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </div>
- 
- 
+
+{/block:IfMinTwitter}
+
+{block:IfNotMinTwitter}{/block:IfNotMinTwitter}
+
+</div>
+
 <div id="content">
  
 {block:Posts}
