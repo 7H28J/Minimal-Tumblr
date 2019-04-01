@@ -28,8 +28,8 @@ More to come
 
 # Preview
 
-![text](https://i.imgur.com/xIFvDZl.png)
-![text](https://i.imgur.com/vMBmFRN.png)
+![text](https://i.imgur.com/A6xVcV6.png)
+![text](https://i.imgur.com/Gz2Ntz1.png)
 
 # Solid colour boolean
 ![text](https://i.imgur.com/aL7iSLN.gif)
