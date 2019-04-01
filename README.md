@@ -7,8 +7,8 @@ I've added a lot of small tweaks and changes to the theme to make it better on t
 
 More changes to come + detailed list of changes(?)
 
-![text](https://imgur.com/rgni9DU.png)
-![text](https://i.imgur.com/HeNJxz5.png)
+![text](https://i.imgur.com/xIFvDZl.png)
+![text](https://i.imgur.com/vMBmFRN.png)
 
 # Solid colour boolean
 ![text](https://i.imgur.com/aL7iSLN.gif)
@@ -28,6 +28,7 @@ More changes to come + detailed list of changes(?)
 + Default font size is now 11 (small mode is an option 8px).
 + Default width is 500 (small mode is an option, 400px).
 + Lightbox works for Single Posts along with Photosets now.
++ Added optional twitter feed, default is setup to mine.
 
 + Tidied up the code, made it easier to understand and change.
 
