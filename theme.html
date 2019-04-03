@@ -30,13 +30,15 @@
 
 
 <meta name="if:Titlebar Style" content="0"/>
+<meta name="if:Borders" content ="0"/>
+<meta name="if:Flat" content ="0"/>
 <meta name="image:Sidebar image" content=""/>
 <meta name="if:Sidebar Image" content="0"/>
 <meta name="if:Min Description" content="1"/>
 <meta name="if:Min Links" content="1"/>
-<meta name="if:Min Twitter" content="1">
 <meta name="if:Disable Right Click" content="1"/>
 <meta name="if:Japanese" content="0"/>
+<meta name="if:Text Buttons" content="0"/>
  
 <meta name="color:Text" content="#9a9a9a"/>
 <meta name="color:Gradient text" content="#ffffff"/>
@@ -46,12 +48,13 @@
 <meta name="color:Solid" content="#3f3f3f"/>
 <meta name="color:Accent" content="#ff9ca2"/>
 <meta name="color:Accent hover" content="#cecece"/>
-<meta name="color:Navigation" content="#cecece"/>
+<meta name="color:Navigation" content="#9a9a9a"/>
 <meta name="color:Icons" content="#fb9ca8"/>
 <meta name="color:Icons hover" content="#99d1ff"/>
 <meta name="color:Inactive" content="#dadada"/>
 <meta name="color:Like" content="#ff6767"/>
 <meta name="color:Reblog" content="#75b1d6"/>
+<meta name="color:Notes" content="#f2992e"/>
  
 <meta name="select:Font size" content="11px"/>
 <meta name="select:Font size" content="12px"/>
@@ -168,7 +171,7 @@ ul#menu {
     counter-reset: navno;
     margin: 0;
     padding: 0px 20px 10px 20px;
-    text-transform: lowercase;
+    /*text-transform: lowercase; */
     letter-spacing: 0;
 }
 ul#menu li {
@@ -244,14 +247,29 @@ ul#menu li:hover .th {
 #side {
     position: fixed;
     float: left;
-    width: 250px;
     padding: 0;
+
+    {block:IfBorders}
+    width: 251px; /* 1px fix for borders? */
+    {/block:IfBorders}
+    
+    {block:IfNotBorders}
+    width: 250px;
+    {/block:IfNotBorders}
 }
 #sidebar{
     overflow:hidden;
     border-radius: {select:Edges};
     background-color:#ffffff;
-   
+
+    {block:IfBorders}
+    border-left: 1px solid rgba(0,0,0,.08);
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    border-right: 1px solid rgba(0,0,0,.08);
+    {/block:IfBorders}
+    
+    {block:IfNotBorders}
+    {/block:IfNotBorders}
 }
 #titlebar {
     {block:IfTitlebarStyle}
@@ -307,6 +325,16 @@ ul#menu li:hover .th {
     margin: 10px 0 0px 0;
     padding: 10px;
     display: block;
+
+    {block:IfBorders}
+    border-left: 1px solid rgba(0,0,0,.08);
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    border-right: 1px solid rgba(0,0,0,.08);
+    border-top: 1px solid rgba(0,0,0,.08);
+    {/block:IfBorders}
+    
+    {block:IfNotBorders}
+    {/block:IfNotBorders}
 }
 .pagination a {
     color: {color:Text};
@@ -321,14 +349,17 @@ ul#menu li:hover .th {
     padding: 4px 8px;
 }
 
+/*
+    DISABLED, broken.
+
 .twitter {
-    background-color: #FFFFFF;
     color: #FFFFFF;
     font-size: 10px;
     margin: 10px 0 0px 0;
-    /*padding: 10px;*/
     display: block;
 }
+
+*/
 
 
 
@@ -360,6 +391,15 @@ article {
     width:calc({select:Post width} + 0px);
     overflow: hidden;
     border-radius: {select:Edges};
+    
+    {block:IfBorders}
+    border-left: 1px solid rgba(0,0,0,.08);
+    border-top: 1px solid rgba(0,0,0,.08);
+    border-right: 1px solid rgba(0,0,0,.08);
+    {/block:IfBorders}
+    
+    {block:IfNotBorders}
+    {/block:IfNotBorders}
 }
  
 .entries {  
@@ -405,7 +445,6 @@ blockquote img {
 }
 
 
-
 /*
     __      H1      --
 */
@@ -447,6 +486,13 @@ header {
     {/block:IfNotTitlebarStyle}
     
     border-image-slice: 1;
+
+    {block:IfBorders}
+    border-top: 1px solid rgba(0,0,0,.08);
+    {/block:IfBorders}
+
+    {block:IfNotBorders}
+    {/block:IfNotBorders}
 }
  
 header a {
@@ -487,12 +533,30 @@ ul.meta li.notes {
     margin: 0px 0px 0px 20px;
     padding: 0;
 }
+
 .svg-inline--fa.fa-star.fa-w-18 {
     margin-right: 0px;
-    color:{color:Gradient 2};
+
+    {block:IfTitlebarStyle}
+    color: {color:Inactive};
+    {/block:IfTitlebarStyle}
+
+    {block:IfNotTitlebarStyle}
+    color: {color:Gradient 3};
+    {/block:IfNotTitlebarStyle}
 }
- 
- 
+
+.svg-inline--fa.fa-star.fa-w-18:hover {
+
+    {block:IfTitlebarStyle}
+    color: {color:Notes};
+    {/block:IfTitlebarStyle}
+
+    {block:IfNotTitlebarStyle}
+    color: {color:Gradient 3};
+    {/block:IfNotTitlebarStyle}
+}
+
 ul.meta li.like {
     color:{color:Gradient 3};
     display: inline-block;
@@ -567,13 +631,22 @@ ul.meta li.sources {
 
 
 footer {
+
     {block:IfTitlebarStyle}
-    background: {color:Solid};
+    background-color: {color:Solid};
     {/block:IfTitlebarStyle}
     
     {block:IfNotTitlebarStyle}
     background-image: linear-gradient(to right, {color:Gradient 1} , {color:Gradient 2} , {color:Gradient 3}) ;
     {/block:IfNotTitlebarStyle}
+
+    {block:IfBorders}
+    background-color: #ffffff; /* change me later */
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    {/block:IfBorders}
+
+    {block:IfNotBorders}
+    {/block:IfNotBorders}
     
     margin: 10px -20px -20px -20px;
     padding: 10px;
@@ -584,12 +657,26 @@ footer {
     transition-duration: .7s;
 }
 footer a {
+
+    {block:IfFlat}
+    color: {color:Navigation}
+    {/block:IfFlat}
+
+    {block:IfNotFlat}
     color: {color:Gradient text};
     opacity:1;
+    {/block:IfNotFlat}
 }
 footer a:hover {
+
+    {block:IfFlat}
+    color: {color:Navigation};
+    {/block:IfFlat}
+
+    {block:IfNotFlat}
     color: {color:Gradient text};
     opacity:0.8;
+    {/block:IfNotFlat}
 }
 ul.tags {
     display: inline;
@@ -1069,8 +1156,9 @@ document.oncontextmenu = new Function("return false");
 </head>
 
 <!-- used for Twitter CSS override -->
+<!--    <body onload="paint()">    -->
 
-<body onload="paint()">
+<body>
  
  
  
@@ -1093,9 +1181,7 @@ Asian Music Enthusiast.
 <br>
 Modelling & Photography.
 <br><br>
-discord: min#0001
 {/block:IfMinDescription}
-
 {block:IfNotMinDescription}
 {Description}
 {/block:IfNotMinDescription}
@@ -1103,10 +1189,14 @@ discord: min#0001
  
 <ul id="menu">
 {block:IfMinLinks}
-<li><a href="{BlogURL}"><span class="th th-house-1-o"></span> index</a></li>
-<li><a href="https://twitter.com/7H28J"><span class="th th-send-1-o"></span> twitter</a></li>
-<li><a href="https://last.fm/user/min_n"><span class="th th-send-1-o"></span> last.fm</a></li>
-<li><a href="https://www.youtube.com/channel/UC2IvLig3rbrfayp2pdSq4vA"><span class="th th-send-1-o"></span> youtube</a></li>
+<li><a href="{BlogURL}"><span class="th th-house-1-o"></span> Index</a></li>
+<li><a href="https://twitter.com/7H28J"><span class="th th-send-1-o"></span> Twitter</a></li>
+<li><a href="https://last.fm/user/min_n"><span class="th th-send-1-o"></span> Last.fm</a></li>
+<li><a href="https://www.youtube.com/channel/UC2IvLig3rbrfayp2pdSq4vA"><span class="th th-send-1-o"></span> YouTube</a></li>
+<!-- Share Theme
+<br><br>
+<li><a href="https://github.com/7H28J/Minimal-Tumblr"><span class="th th-send-1-o"></span>Theme</a>
+-->
 {/block:IfMinLinks}
 
 {block:IfNotMinLinks}
@@ -1146,18 +1236,21 @@ discord: min#0001
 {/block:Pagination}
 
 <!-- Twitter + CSS override Javascript -->
+<!--
+
+    DISABLED, broken.
 
 {block:IfMinTwitter}
 <div class="twitter">
-    <a class="twitter-timeline" data-height="324" data-dnt="true" href="https://twitter.com/7H28J" data-widget-id="343053082919333888"></a>
+    <a class="twitter-timeline" data-height="349" data-dnt="true" href="https://twitter.com/7H28J" data-widget-id="343053082919333888"></a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 <script type="text/javascript">
     var widgetCSS = "" +
-    ".timeline-Header{display: none;}" +
-    ".timeline-Tweet-text{color: #9a9a9a;}" +
-    ".timeline-Footer{display: none;}" +
-    ".tweet, .timeline-TweetList-tweet{Border-top: none!important;}";
+    ".timeline-Header{display: none!important;}" +
+    ".timeline-Tweet-text{color: #9a9a9a!important;}" +
+    ".timeline-Footer{display: none!important;}" +
+    ".tweet, .timeline-TweetList-tweet{ Border-top: none!important;}" +
 
 function paint(){
   var w = document.getElementById("twitter-widget-0").contentDocument;
@@ -1173,7 +1266,7 @@ function paint(){
 
 {/block:IfMinTwitter}
 
-{block:IfNotMinTwitter}{/block:IfNotMinTwitter}
+{block:IfNotMinTwitter}{/block:IfNotMinTwitter} -->
 
 </div>
 
@@ -1337,15 +1430,29 @@ function paint(){
 </li>
 {/block:NoteCount}
  
- 
+{block:IfTextButtons}
 <li class="like">
-<a href="#" class="like">{LikeButton}<span class="fas fa-heart"></span></a>
+<a href="#" class="like">{LikeButton}<span></span>Like</a>
 </li>
- 
- <li class="reblog">
+{/block:IfTextButtons}
+
+{block:IfNotTextButtons}
+<li class="like">
+<a href="#" class="like">{LikeButton}<span></span></a>
+</li>
+{/block:IfNotTextButtons}
+
+{block:IfTextButtons}
+<li class="reblog">
+<a href="{ReblogURL}"><span></span>Reblog</a>
+</li>
+{/block:IfTextButtons}
+
+{block:IfNotTextButtons}
+<li class="reblog">
 <a href="{ReblogURL}"><i class="fas fa-retweet"></i></a>
 </li>
- 
+{/block:IfNotTextButtons}
  
 {block:PermalinkPage}
  
