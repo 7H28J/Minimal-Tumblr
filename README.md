@@ -20,7 +20,9 @@ I've added a lot of small tweaks and changes to the theme to make it better on t
 + Default font size is now 11 (small mode is an option 8px).
 + Default width is 500 (small mode is an option, 400px).
 + Lightbox works for Single Posts along with Photosets now.
-+ Added optional twitter feed, default is setup to mine.
+- Added optional twitter feed, default is setup to mine. (removed for now).
++ Added option for Borders around the Sidebar, Pagination and posts.
++ Added option for Text Reblog & Like buttons.
 
 + Tidied up the code, made it easier to understand and change.
 
@@ -28,8 +30,7 @@ More to come
 
 # Preview
 
-![text](https://i.imgur.com/A6xVcV6.png)
-![text](https://i.imgur.com/Gz2Ntz1.png)
+![text](https://i.imgur.com/ZbPejqC.png)
 
 # Solid colour boolean
 ![text](https://i.imgur.com/aL7iSLN.gif)
