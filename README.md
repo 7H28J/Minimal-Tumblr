@@ -31,6 +31,3 @@ More to come
 # Preview
 
 ![text](https://i.imgur.com/ZbPejqC.png)
-
-# Solid colour boolean
-![text](https://i.imgur.com/aL7iSLN.gif)
